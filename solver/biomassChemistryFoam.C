@@ -32,7 +32,7 @@ Description
 
 #include "fvCFD.H"
 #include "turbulentFluidThermoModel.H"
-#include "biomassCloud.H"
+#include "biomassMSCCloud.H"
 #include "psiReactionThermo.H"
 #include "CombustionModel.H"
 #include "fvOptions.H"
@@ -89,8 +89,23 @@ int main(int argc, char *argv[])
         Info<< "Time = " << runTime.timeName() << nl << endl;
         
         pDyn = 0.5*rho*magSqr(U);
-
+        
+        Info<<"saved carrier fields from thermo"<<endl;
+        
+        const volScalarField Tsaved = T;
+//         const PtrList<volScalarField>& Ysaved = composition.Y();
+        
+        Info<<"smaple carrier fields"<<endl;
+        
+        Tref = bioCloud.MSC().sample(T);
+        rhoC = bioCloud.MSC().sample(rho);
+        UC = bioCloud.MSC().sample(U);
+        
         bioCloud.evolve();
+        
+        Info<<"recover carrier fields from thermo"<<endl;
+        
+        Tref = Tsaved;
 
         #include "rhoEqn.H"
 

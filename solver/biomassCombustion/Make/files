@@ -2,7 +2,7 @@ BIOMASSPARCEL=biomassParcel
 DERIVEDPARCEL=$(BIOMASSPARCEL)/derivedBiomassParcel
 
 BIOMASSCLOUD=biomassCloud
-BASECLOUD=$(BIOMASSCLOUD)/baseClass
+BASECLOUD=$(BIOMASSCLOUD)/baseClasses
 /* DERIVEDCLOUD=$(BIOMASSCLOUD)/derivedBiomassCloud */
 
 
@@ -16,5 +16,30 @@ $(DERIVEDPARCEL)/makeBiomassParcelSubmodels.C
 biomassCloudList/biomassCloudList.C
 
 
+PARCELS=biomassParcel
+
+DERIVEDPARCELS=$(PARCELS)/derivedBiomassParcel
+
+CLOUDS=biomassCloud
+BASECLOUDS=$(CLOUDS)/baseClasses
+DERIVEDCLOUDS=$(CLOUDS)/derivedBiomassCloud
+
+
+/* MSC external models */
+MSCSUBMODELS=submodels/multiScaleCoupling/MSCModel
+$(MSCSUBMODELS)/virtualTGM/coarserGrid.C
+$(MSCSUBMODELS)/DBM/gasFilter/gasFilter.C
+
+/* Cloud base classes */
+$(BASECLOUDS)/kinematicMSCCloud/kinematicMSCCloud.C
+
+
+/* ReactingMultiphase MSC sub-models */
+REACTINGMULTIPHASEMSCPARCEL=$(DERIVEDPARCELS)/basicReactingMultiphaseMSCParcel
+$(REACTINGMULTIPHASEMSCPARCEL)/makeBasicReactingMultiphaseMSCParcelSubmodels.C
+
+
+/* biomass MSC sub-models */
+$(DERIVEDPARCEL)/makeBiomassMSCParcelSubmodels.C
 
 LIB = $(FOAM_USER_LIBBIN)/libbiomassCombustion
