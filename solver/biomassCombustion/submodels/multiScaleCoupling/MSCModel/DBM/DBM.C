@@ -89,9 +89,7 @@ Foam::DBM<CloudType>::sample
     const volScalarField& vf
 ) const
 {
-    tmp<Foam::volScalarField> tvf(diffusion_->filteredField(vf));
-    return tvf;
-//     return diffusion_->filteredField(vf);
+    return diffusion_->filteredField(vf);
 }
 
 

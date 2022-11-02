@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "0.001/uniform/lagrangian/bioCloud";
+    object      bioCloudOutputProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+injectionModel
+{
+    model1
+    {
+        massInjected    0.0001276260174;
+        nInjections     1;
+        parcelsAddedTotal 1;
+        timeStep0       0.001;
+    }
+}
+
+patchInteractionModel
+{
+    localInteraction
+    {
+        nEscape         3 { 0 };
+        massEscape      3 { 0 };
+        nStick          3 { 0 };
+        massStick       3 { 0 };
+    }
+}
+
+phaseChangeModel
+{
+    mass            8.008666739e-09;
+}
+
+pyrolysisModel
+{
+    mass            1.084779968e-18;
+}
+
+charOxidizationModel
+{
+    mass            0;
+}
+
+
+// ************************************************************************* //

@@ -106,6 +106,7 @@ int main(int argc, char *argv[])
         Info<<"recover carrier fields from thermo"<<endl;
         
         Tref = Tsaved;
+//         const PtrList<volScalarField>& Ysaved = composition.Y();
 
         #include "rhoEqn.H"
 
