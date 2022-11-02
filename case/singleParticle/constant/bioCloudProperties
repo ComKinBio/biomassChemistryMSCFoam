@@ -36,8 +36,8 @@ solution
 
     interpolationSchemes
     {
-        rho             cell;
-        U               cellPoint;
+        rhoC             cell;
+        UC               cellPoint;
         thermo:mu       cell;
         T               cell;
         Cp              cell;
@@ -120,6 +120,36 @@ subModels
 //         }
 //         gravity;
     }
+    
+//     MSCModel        virtualTGM;
+//     
+//     virtualTGMCoeffs
+//     {
+//         gridOrigin   (-0.015 -0.1 0);
+//         gridVertex   (0.015 0.1 1.0);
+//         coarseGridSize  (0.03 0.02 0.02);
+//     }
+
+//     MSCModel        slidingGrid;
+//     
+//     slidingGridCoeffs
+//     {
+//         width   0.1;
+//         length  0.02;
+//         height  0.02;
+//         alphaWeighted   yes;
+//     }
+
+    MSCModel        DBM;
+    
+    DBMCoeffs
+    {
+        bandWidth   0.005;
+        steps   3;
+    }
+    
+
+
 
     injectionModels
     {
