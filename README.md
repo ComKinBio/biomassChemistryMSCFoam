@@ -15,12 +15,12 @@
 
 
 <!-- PROJECT -->
-# biomassChemistryFoam
+# biomassChemistryMSCFoam
 
 
 
 <!-- PROJECT LOGO -->
-The biomassChemistryFoam is an extended solver based on the official "[coalChemistryFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/coalChemistryFoam)" solver. Instead of using the coalCombustion lib, a new biomassCombustion lib is built. The layer-based thermally thick particle model is implemented to calculate the thermal conversion of the biomass particle.
+The biomassChemistryMSCFoam is an extended solver based on the official "[coalChemistryFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/coalChemistryFoam)" solver, and our developed solver "[biomassChemistryFoam](https://github.com/ComKinBio/biomassChemistryFoam)". MSC stands for Meso Scale Coupling. It used a better coding structure and design to realize the coupling method in our previous publication [[1]](#1) and [[2]](#2).
 <br />
 <br />
 
@@ -33,9 +33,9 @@ The biomassChemistryFoam is an extended solver based on the official "[coalChemi
 
 <div align="center">
   <p align="center">
-    <a href="https://github.com/ComKinBio/biomassChemistryFoam/issues">Report Bug</a>
+    <a href="https://github.com/ComKinBio/biomassChemistryMSCFoam/issues">Report Bug</a>
     ·
-    <a href="https://github.com/ComKinBio/biomassChemistryFoam/issues">Request Feature</a>
+    <a href="https://github.com/ComKinBio/biomassChemistryMSCFoam/issues">Request Feature</a>
   </p>
 </div>
 
@@ -45,28 +45,12 @@ The biomassChemistryFoam is an extended solver based on the official "[coalChemi
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">Features</a>
-      <ul>
-        <li><a href="#IBM-model">IBM model</a></li>
-      </ul>
-      <ul>
-        <li><a href="#New-library">New library</a></li>
-      </ul>
-      <ul>
-        <li><a href="#Solver">Solver</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">Features</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#Contributing">Contributing</a></li>
     <li><a href="#Contact">Contact</a></li>
     <li><a href="#Publications">Publications</a></li>
-    <ul>
-        <li><a href="#Publications using this repo">Publications using this repo</a></li>
-      </ul>
-      <ul>
-        <li><a href="#Other-references">Other-references</a></li>
-      </ul>
+    <li><a href="#Publications using this repo">Publications using this repo</a></li>
   </ol>
 </details>
 
@@ -75,22 +59,13 @@ The biomassChemistryFoam is an extended solver based on the official "[coalChemi
 <!-- Features -->
 ## Features
 
-### IBM
-
-IBM (interfaces-based model) and MBM (mesh-based model) are two typical thermally thick particle models. IBM was proposed by Thunman et al. [[3]](#3). In some literature, it also refers as sharp interface model or layer-based model. The IBM used in this repo is based on work of Ström et al. [[2]](#2), and certain modifications are also adopted [[1]](#1). The particle is divided into 4 layers (wet wood, dry wood, char, and ash) by 3 inifinite thin converting fronts (drying, devolatilization, and char burnout). Each layer is assumed to be uniform. The heat and mass transfer between the layers and fronts are calculated. 
-
-
-### New library
-
-The new lib has two new templates which are inheritaged from the official Lagrangian lib. The ReactingMultiphaseIBMCloud template is inheritaged from [ReactingMultiphaseCloud](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/src/lagrangian/intermediate/clouds/Templates/ReactingMultiphaseCloud) template, and the ReactingMultiphaseIBMParcel is inheritaged from [ReactingMultiphaseParcel](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/src/lagrangian/intermediate/parcels/Templates/ReactingMultiphaseParcel). 
-
-Two submodels with RTS mechanism are added. The PyrolysisModel (which is modified from [DevolatilisationModel](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/src/lagrangian/intermediate/submodels/ReactingMultiphase/DevolatilisationModel)) and the CharOxidizationModel (which is modified from [SurfaceReactionModel](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/src/lagrangian/intermediate/submodels/ReactingMultiphase/SurfaceReactionModel)) are bundled with the reactingMultiphaseIBMCloud type. The reason to add these two submodels rather than using the original DevolatilisationModel and SurfaceReactionModel is that the pure vitrual functions in the original two has less access variables than wanted. 
+### About the MSC submodels
 
 ### Solver
 
-The solver is a copy of the [coalChemistryFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/coalChemistryFoam), but the coalCloud is replaced by the biomassCloud. The OpenFOAM7 is required. Multi-version support is on the todo list.
 
 A single particle case is added as a test and tutorial case for this slover.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -124,11 +99,11 @@ Distributed under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.en.ht
 <!-- CONTACT -->
 ## Contact
 
+Corinna Schulze-Netzer - corinna.netzer@ntnu.no
+
 Jingyuan Zhang - jingyuan.zhang@ntnu.no 
 
 Tian Li - tian.li@ntnu.no / tian.li@risefr.no
-
-Henrik Ström - henrik.strom@chalmers.se
 
 
 Research group: [ComKin group at NTNU](https://www.ntnu.edu/comkin/)
@@ -139,29 +114,24 @@ Research group: [ComKin group at NTNU](https://www.ntnu.edu/comkin/)
 <!-- Publications -->
 ## Publications
 
-If you want to use biomassChemistryFoam in your research, you should cite the following papers:
+If you want to use biomassChemistryMSCFoam in your research, you should cite the following papers:
 
 ### Publications using this repo
 * <a id="1">[1]</a> [Zhang J, Li T, Ström H, et al. Grid-independent Eulerian-Lagrangian approaches for simulations of solid fuel particle combustion[J]. Chemical Engineering Journal, 2020, 387: 123964.](https://www.sciencedirect.com/science/article/pii/S1385894719333790)
-
-### Other references
-* <a id="2">[2]</a> [Ström H, Thunman H. CFD simulations of biofuel bed conversion: A submodel for the drying and devolatilization of thermally thick wood particles[J]. Combustion and Flame, 2013, 160(2): 417-431.](https://www.sciencedirect.com/science/article/pii/S0010218012002933)
-* <a id="3">[3]</a> [Thunman H, Leckner B, Niklasson F, et al. Combustion of wood particles—a particle model for Eulerian calculations[J]. Combustion and Flame, 2002, 129(1-2): 30-46.](https://www.sciencedirect.com/science/article/pii/S0010218001003716)
- 
-<p align="right">(<a href="#top">back to top</a>)</p>
+*<a id="2">[2]</a> [Zhang J, Li T, Ström H, et al. A novel coupling method for unresolved CFD-DEM modeling[J]. International Journal of Heat and Mass Transfer, 2023, 203: 123817.](https://www.sciencedirect.com/science/article/pii/S0017931022012856)
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ComKinBio/biomassChemistryFoam.svg?style=flat
-[contributors-url]: https://github.com/ComKinBio/biomassChemistryFoam/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ComKinBio/biomassChemistryFoam.svg?style=flat
-[forks-url]: https://github.com/ComKinBio/biomassChemistryFoam/network/members
-[stars-shield]: https://img.shields.io/github/stars/ComKinBio/biomassChemistryFoam.svg?style=flat
-[stars-url]: https://github.com/ComKinBio/biomassChemistryFoam/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ComKinBio/biomassChemistryFoam.svg?style=flat
-[issues-url]: https://github.com/ComKinBio/biomassChemistryFoam/issues
+[contributors-shield]: https://img.shields.io/github/contributors/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[contributors-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[forks-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/network/members
+[stars-shield]: https://img.shields.io/github/stars/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[stars-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[issues-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/issues
 [license-shield]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [license-url]: https://www.gnu.org/licenses/gpl-3.0
 
