@@ -20,7 +20,7 @@
 
 
 <!-- PROJECT LOGO -->
-The biomassChemistryMSCFoam is an extended solver based on the official "[coalChemistryFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/coalChemistryFoam)" solver, and our developed solver "[biomassChemistryFoam](https://github.com/ComKinBio/biomassChemistryFoam)". MSC stands for Meso Scale Coupling. It used a better coding structure and design to realize the coupling method in our previous publication [[1]](#1) and [[2]](#2).
+The biomassChemistryMSCFoam is an extended solver based on the official "[coalChemistryFoam](https://github.com/OpenFOAM/OpenFOAM-7/tree/master/applications/solvers/lagrangian/coalChemistryFoam)" solver, and our developed solver "[biomassChemistryMSCFoam](https://github.com/ComKinBio/biomassChemistryMSCFoam)". MSC stands for Meso Scale Coupling. It used a better coding structure and design to realize the coupling method in our previous publication [[1]](#1) and [[2]](#2).
 <br />
 <br />
 
@@ -124,14 +124,14 @@ If you want to use biomassChemistryMSCFoam in your research, you should cite the
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ComKinBio/biomassChemistryFoam.svg?style=flat
-[contributors-url]: https://github.com/ComKinBio/biomassChemistryFoam/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ComKinBio/biomassChemistryFoam.svg?style=flat
-[forks-url]: https://github.com/ComKinBio/biomassChemistryFoam/network/members
-[stars-shield]: https://img.shields.io/github/stars/ComKinBio/biomassChemistryFoam.svg?style=flat
-[stars-url]: https://github.com/ComKinBio/biomassChemistryFoam/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ComKinBio/biomassChemistryFoam.svg?style=flat
-[issues-url]: https://github.com/ComKinBio/biomassChemistryFoam/issues
+[contributors-shield]: https://img.shields.io/github/contributors/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[contributors-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[forks-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/network/members
+[stars-shield]: https://img.shields.io/github/stars/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[stars-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ComKinBio/biomassChemistryMSCFoam.svg?style=flat
+[issues-url]: https://github.com/ComKinBio/biomassChemistryMSCFoam/issues
 [license-shield]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [license-url]: https://www.gnu.org/licenses/gpl-3.0
 
