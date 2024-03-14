@@ -118,6 +118,7 @@ If you want to use biomassChemistryMSCFoam in your research, you should cite the
 
 ### Publications using this repo
 * <a id="1">[1]</a> [Zhang J, Li T, Ström H, et al. Grid-independent Eulerian-Lagrangian approaches for simulations of solid fuel particle combustion[J]. Chemical Engineering Journal, 2020, 387: 123964.](https://www.sciencedirect.com/science/article/pii/S1385894719333790)
+  
 *<a id="2">[2]</a> [Zhang J, Li T, Ström H, et al. A novel coupling method for unresolved CFD-DEM modeling[J]. International Journal of Heat and Mass Transfer, 2023, 203: 123817.](https://www.sciencedirect.com/science/article/pii/S0017931022012856)
 
 
