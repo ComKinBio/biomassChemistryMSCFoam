@@ -135,4 +135,3 @@ If you want to use biomassChemistryMSCFoam in your research, you should cite the
 [license-shield]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [license-url]: https://www.gnu.org/licenses/gpl-3.0
 
-
