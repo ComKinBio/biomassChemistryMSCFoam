@@ -49,7 +49,6 @@ The biomassChemistryMSCFoam is an extended solver based on the official "[coalCh
     <li><a href="#license">License</a></li>
     <li><a href="#Contributing">Contributing</a></li>
     <li><a href="#Contact">Contact</a></li>
-    <li><a href="#Publications">Publications</a></li>
     <li><a href="#Publications using this repo">Publications using this repo</a></li>
   </ol>
 </details>
@@ -111,17 +110,17 @@ Research group: [ComKin group at NTNU](https://www.ntnu.edu/comkin/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
 <!-- Publications -->
-## Publications
+
+## Publications using this repo
 
 If you want to use biomassChemistryMSCFoam in your research, you should cite the following papers:
 
-### Publications using this repo
 * <a id="1">[1]</a> [Zhang J, Li T, Ström H, et al. Grid-independent Eulerian-Lagrangian approaches for simulations of solid fuel particle combustion[J]. Chemical Engineering Journal, 2020, 387: 123964.](https://www.sciencedirect.com/science/article/pii/S1385894719333790)
-  
 * <a id="2">[2]</a> [Zhang J, Li T, Ström H, et al. A novel coupling method for unresolved CFD-DEM modeling[J]. International Journal of Heat and Mass Transfer, 2023, 203: 123817.](https://www.sciencedirect.com/science/article/pii/S0017931022012856)
 
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
