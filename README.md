@@ -59,6 +59,12 @@ The biomassChemistryMSCFoam is an extended solver based on the official "[coalCh
 ## Features
 
 ### About the MSC submodels
+The DBM (diffusion based method) model and the virtualTGM (Two-grid method) can be directly used, the implementation principles are described in our previous publication "[Computationally efficient coarse-graining XDEM/CFD modeling of fixed-bed combustion of biomass](https://www.sciencedirect.com/science/article/pii/S0010218021006192)"
+
+The steppedDBM model is not implemented.
+
+The slidingGrid model requires another lib, which may not be public available. This method is developed by [Jan Wilhelm Gärtner](https://www.itv.uni-stuttgart.de/institut/team/Gaertner-00001/) in university of stuttgart called Moving Average method. Please contact him for the additional lib, or delete everything related with this method if you are not using this method. Once you have the Moving Average lib replace the file with the same names in the [addon](https://github.com/ComKinBio/biomassChemistryMSCFoam/tree/main/addon).
+
 
 ### Solver
 
@@ -74,7 +80,7 @@ A single particle case is added as a test and tutorial case for this slover.
 
 ## Contributing
 
-This repo accepts updating. For example, correcting the coding style to the [OpenFOAM style](https://openfoam.org/dev/coding-style-guide/), adding particle shape submodel to [RTS mechanism](https://openfoamwiki.net/index.php/OpenFOAM_guide/runTimeSelection_mechanism), making submodels of thermally thick particle properties (currently hard coded)... ...
+This repo accepts updating. For example, correcting the coding style to the [OpenFOAM style](https://openfoam.org/dev/coding-style-guide/).
 
 If you have any contribution to this repo, please fork the repo and create a pull request (to dev). You can also simply open an issue with the tag "improvement".
 
