@@ -25,7 +25,7 @@ Class
     Foam::steppedDBM
 
 Description
-    The diffusion based method
+    The diffusion based method, not finished, can not be used now TODO
 
 \*---------------------------------------------------------------------------*/
 
